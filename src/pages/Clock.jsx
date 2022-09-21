@@ -19,11 +19,10 @@ const Clock = ({ item }) => {
 
 const Wrapper = styled.div`
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  &:not(:first-child) {
-    margin-top: 2rem;
-  }
+  justify-content: center;
+  color: white;
+  font-size: 7rem;
+  margin-bottom: 2rem;
 `;
 
 export default Clock;

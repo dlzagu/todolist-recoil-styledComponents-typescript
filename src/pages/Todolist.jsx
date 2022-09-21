@@ -33,14 +33,16 @@ const TodoList = () => {
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
-  linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+
   background-size: cover;
   background-position: center center;
-  background-image: url(${(props) =>
-    props.bg ||
-    "https://user-images.githubusercontent.com/59393359/74718667-0adb8a80-5276-11ea-8bc3-0e36c67cf28a.jpg"});
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(${(props) =>
+      props.bg ||
+      "https://user-images.githubusercontent.com/59393359/74718667-0adb8a80-5276-11ea-8bc3-0e36c67cf28a.jpg"});
 `;
 const ContentWrapper = styled.div`
   flex: 1;
