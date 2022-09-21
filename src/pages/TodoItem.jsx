@@ -63,6 +63,7 @@ const Wrapper = styled.div`
 const InputText = styled.input`
   flex: 1;
   height: 3.5rem;
+  color: white;
   border-radius: 0.5rem;
   border: 0;
   background-color: transparent;

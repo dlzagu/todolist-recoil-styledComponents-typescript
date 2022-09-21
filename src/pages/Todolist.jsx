@@ -1,10 +1,12 @@
+import { useState, useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import styled from "styled-components";
 import { todoListState } from "../atom";
 import TodoItem from "./TodoItem.jsx";
 import TodoItemCreator from "./TodoItemCreator.jsx";
 import Clock from "./Clock.jsx";
-import { useState, useEffect } from "react";
+import Weather from "./Weather.jsx";
+
 const TodoList = () => {
   const todoList = useRecoilValue(todoListState);
   const [bg, setBg] = useState("");
@@ -20,6 +22,7 @@ const TodoList = () => {
   return (
     <Wrapper bg={bg}>
       <ContentWrapper>
+        <Weather />
         <Clock></Clock>
         <TodoItemCreator />
         {todoList.map((todoItem) => (

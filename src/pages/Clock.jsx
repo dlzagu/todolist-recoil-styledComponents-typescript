@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 
-const Clock = ({ item }) => {
+const Clock = () => {
   const [clock, setClock] = useState("00:00");
   function getClock() {
     const date = new Date();
