@@ -38,7 +38,7 @@ const TodoItem = ({ item }) => {
         onChange={toggleItemCompletion}
       />
       <InputText type="text" value={item.text} onChange={editItemText} />
-      <Button onClick={deleteItem}>X</Button>
+      <Button onClick={deleteItem}>❌</Button>
     </Wrapper>
   );
 };
@@ -72,9 +72,10 @@ const InputText = styled.input`
 `;
 
 const Checkbox = styled.input`
+  background: none;
   flex: 0 0 2.5rem;
   height: 2.5rem;
-  border: solid 1px rgba(145, 158, 171, 0.24);
+  border: solid 1px white;
   box-sizing: border-box;
 `;
 
