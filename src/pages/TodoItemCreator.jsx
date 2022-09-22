@@ -7,7 +7,8 @@ const TodoItemCreator = () => {
   const [inputValue, setInputValue] = useState("");
   const setTodoList = useSetRecoilState(todoListState);
 
-  const addItem = () => {
+  const addItem = (e) => {
+    e.preventDefault();
     setTodoList((oldTodoList) => [
       ...oldTodoList,
       {
@@ -24,10 +25,15 @@ const TodoItemCreator = () => {
   };
 
   return (
-    <Wrapper>
-      <Input type="text" value={inputValue} onChange={onChange} />
-      <Button onClick={addItem}>Add</Button>
-    </Wrapper>
+    <Form onSubmit={addItem}>
+      <Input
+        type="text"
+        value={inputValue}
+        placeholder="Write a To Do"
+        required
+        onChange={onChange}
+      />
+    </Form>
   );
 };
 
@@ -37,30 +43,23 @@ function getId() {
   return id++;
 }
 
-const Wrapper = styled.div`
+const Form = styled.form`
   display: flex;
-  align-items: center;
+  justify-content: center;
   gap: 10px;
 `;
 
 const Input = styled.input`
-  flex: 1;
-  height: 35px;
-  border-radius: 5px;
-  border: solid 1px rgba(145, 158, 171, 0.24);
-  padding: 0 20px;
-  box-sizing: border-box;
-`;
-
-const Button = styled.button`
-  font-size: 14px;
-  font-weight: 700;
-  color: #fff;
-  background-color: #3366ff;
+  background: none;
+  appearance: none;
   border: 0;
-  height: 35px;
-  padding: 0 20px;
-  border-radius: 8px;
+  font-size: 3rem;
+  color: white;
+  border-bottom: 2px solid white;
+  text-align: center;
+  &::placeholder {
+    color: white;
+  }
 `;
 
 export default TodoItemCreator;
