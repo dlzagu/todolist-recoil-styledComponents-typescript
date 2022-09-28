@@ -32,9 +32,12 @@ const TodoListStats = () => {
 
 const ListWrapper = styled.ul`
   position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
   top: 2rem;
   width: 60%;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 1.2rem;
   list-style: none;
